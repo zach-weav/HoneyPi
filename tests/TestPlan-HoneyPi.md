@@ -201,7 +201,13 @@ Project Developer (myself):
 
 ## Crowd Source Testing Format:
 
--  __Step-by-step testing instructions:__ TBD
+-  __Step-by-step testing instructions:__
+
+ 1. Participants will be given the device IP address and asked to enumerate via scanning tool like NMAP.
+ 2. After viewing the open services, participants will attempt to succesfully connect to the device through a selected port.
+ 3. Participants will execute common commands and interact with the decoy, containerized services.
+ 4. Participants will be asked to validate the host device's security and functionality.
+ 5. After completing the tests, all participants will be asked to submit a response through google forms with any recommendations or feedback.
 
 -  __Feedback Form:__ <https://docs.google.com/forms/d/e/1FAIpQLSfeIDc22Gxbko1440cgwGY_AZ2WgMote0zGgy7HYkfzSei_4A/viewform?usp=dialog>
 
