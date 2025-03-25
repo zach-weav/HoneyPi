@@ -147,7 +147,7 @@ HoneyPi device.
         - Click save and test
 - Create Dashboard
     - Navigate to Dashboards -> New Dashboards -> Import
-    - Import custom dashboard __Honeypi-Grafana-Dashboard.json__ located [Here](HoneyPi)
+    - Import custom dashboard __Honeypi-Grafana-Dashboard.json__ located [Here](HoneyPi/Dashboard)
 
 ## Usage
 
