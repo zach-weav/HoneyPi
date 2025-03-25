@@ -9,7 +9,7 @@ purpose enables cybersecurity professionals to:
 
   - Understand how attackers operate.
   - Learn about common tactics, techniques, and procedures used by adversaries.
-  - Develop cyber defense strategies based on real attack data.
+  - Develop cyber defense strategies based on real time logging and metrics.
 
 By showcasing the importance of proactive security measures, HoneyPi contributes to raising awareness and equipping
 its users with practical knowledge of how to detect and mitigate cyber threats. 
