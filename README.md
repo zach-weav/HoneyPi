@@ -12,7 +12,7 @@ purpose enables cybersecurity professionals to:
   - Develop cyber defense strategies based on real time logging and metrics.
 
 By showcasing the importance of proactive security measures, HoneyPi contributes to raising awareness and equipping
-its users with practical knowledge of how to detect and mitigate cyber threats. 
+its users with practical knowledge of how to detect and mitigate cyber threats.
 
 ## Create/Deploy
 
@@ -21,18 +21,64 @@ Rather, users may follow the methodology provided to create and configure their 
 HoneyPi device.
 
 1. Prerequisites:
+   - A Raspberry Pi or other host machine that will be used to run containerized services
+   - A stable internet connection
+   - ssh access to the host machine
+   - Sudo privileges
+   - At least 8GB free space
+   - Docker
 
 2. Install Docker:
+     ```bash
+     # Install docker
+     sudo apt install docker.io
+
+     # Add user to docker group
+     sudo usermod -aG docker $USER
+
+     # Enable docker to start on boot
+     sudo systemctl enable docker
+
+     # Start docker
+     sudo systemctl start docker
 
 3. Clone HoneyPi Repository:
+    ```bash
+    git clone https://github.com/zach-weav/HoneyPi.git
+    cd HoneyPi
 
-4. Build and Deploy Docker Containers:
+5. Build and Deploy Docker Containers:
+  - __Decoy SSH Server:__ Emulates an SSH sesion, providing realistic file structure and command execution.  The SSH Container allows any connection through port 2222 without needing a password.  Navigate to /decoy-ssh and run the following commands.
+      ```bash
+      # Build the container using the custom Dockerfile
+      docker build -t decoy_ssh .
 
-5. Configure Container Orchestration & Monitoring:
+      # Run the container
+      docker run -d --name ssh_honeypot -v ${PWD}:/usr/src/app -p 2222:2222 decoy_ssh
+    
+*Note: The ssh_honeypot will begin listening on port 2222 and should log all activity to ssh_honeypot.log.  After running the container you may stop it.  As seen later on, all containers will be run via startup script.
+
+  - __Decoy MySQL Container:__ This container utalizes a vulnerable MySQL Database with fake information.  Navigate to /sql-honeypot and run the following commands to mount all required files.
+    ```bash
+    # Build the container using Dockerfile
+    docker build -t decoy_sql .
+
+    # Run the container
+    docker run -d \
+    --name mysql_honeypot \
+    -e MYSQL_ROOT_PASSWORD=root \
+    -p 3306:3306 \
+    -v $(pwd)/mysql_honeypot_logs:/var/log/mysql \
+    -v $(pwd)/custom.cnf:/etc/mysql/conf.d/custom.cnf \
+    -v $(pwd)/init.sql:/docker-entrypoint-initdb.d/init.sql \
+    --restart unless-stopped \
+    decoy_sql
+
+7. Configure Container Orchestration & Monitoring:
 
 ## Usage
 
-HoneyPi is a portable, lightweight, intrusion detection system (IDS).  Users may use the device to monitor threat actor behaviors on their network...
+HoneyPi is a portable, lightweight, intrusion detection system (IDS).  Users may use the device to monitor threat actor behaviors on their network.
 
 ## __Ethical Notice__
 
