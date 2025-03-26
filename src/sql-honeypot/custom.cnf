@@ -1,0 +1,8 @@
+[mysqld]
+bind-address = 0.0.0.0
+general_log = 1
+general_log_file = /var/log/mysql/general.log
+log_output = FILE
+
+
+skip_log_bin
