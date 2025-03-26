@@ -1,6 +1,8 @@
 <p align="center">
-<img src="Images/logo3.png" width="400">
+<img src="Images/logo3.png" width="450">
 </p>
+
+---
 
 HoneyPi is a portable honeypot used for intrusion detection and exploitation analysis.  This device allows connectivity to deployed decoy environments that
 are designed to attract cyber threat actors.  Using docker containers, the HoneyPi simulates realistic targets and fictitious sensitive data.  By intentionally
