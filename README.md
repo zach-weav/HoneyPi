@@ -47,6 +47,11 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
 
 ---
 
+## Build HoneyPi
+
+Want to build your own HoneyPi?
+[Click Here](docs/Build_HoneyPi.md) to view the build and deploy guide!
+
 ## __Ethical Notice__
 
 This project is designed for educational and research purposes.  It should only be used as a tool intended to help individuals and organizations
