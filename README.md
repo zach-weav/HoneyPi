@@ -14,6 +14,39 @@ purpose enables cybersecurity professionals to:
 By showcasing the importance of proactive security measures, HoneyPi contributes to raising awareness and equipping
 its users with practical knowledge of how to detect and mitigate cyber threats.
 
+## Usage
+
+HoneyPi is a powerful honeypot monitoring solution that is designed to capture, visualize, and analyze attacker behavior in real-time using container-based decoy services.
+Once deployed, the HoneyPi acts as a lightweight, Network Intrustion Detection System (NIDS) by collecting detailed logs and performance metrics across containers and
+presenting them in a visual format using a grafana dashboard
+
+### Analyzing Attack Vectors Through Log Analysis
+
+ HoneyPi deploys decoy services like SSH and MySQL containers that mimic vulnerable systems and real-world scenarios.  These containers log every command, query, and connection
+ attempt made by an attacker.  Promtail reads the generated logs and sends them to Loki where they are then sent and made queruable by a grafana dashboard.  Inspecting
+ the logs in real-time through alerting mechanisms allows the user to:
+  - Detect login attempts
+  - Monitor malicious queries or enumeration behavior
+  - Track attacker movement
+  - Identify common tools or tactics attackers may use
+
+### Container Health Monitoring
+
+In addition to log analysis, HoneyPi integrates additional containers Prometheus and cAdvisor to monitor the performance metrics and resource usage of each container.
+These metrics include:
+ - CPU and memory usage over time
+ - Container uptime
+ - Real-time metrics that may indicate spikes in container network activity
+
+### Grafana Dashboard
+
+The grafana dashboard allows HoneyPi to consolodate all logging and metric data into a single interface including features like:
+ - Live log panels showing attacker interactions in real-time
+ - Metric pannels for CPU, Memory, and Container health
+ - Alerting mechanisms that send notifications immediately upon suspicious activity
+
+
+
 ## Create/Deploy
 
 Due to HoneyPi being a physical tool, there is no specific software installation for its use.
@@ -166,10 +199,6 @@ HoneyPi device.
 - Create Dashboard
     - Navigate to Dashboards -> New Dashboards -> Import
     - Import custom dashboard __Honeypi-Grafana-Dashboard.json__ located [Here](Dashboard)
-
-## Usage
-
-HoneyPi is a portable, lightweight, intrusion detection system (IDS).  Users may use the device to monitor threat actor behaviors on their network.
 
 ## __Ethical Notice__
 
