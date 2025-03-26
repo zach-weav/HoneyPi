@@ -1,5 +1,5 @@
 <p align="center">
-<img src="Images/logo2.png" width="400">
+<img src="Images/logo3.png" width="400">
 </p>
 
 HoneyPi is a portable honeypot used for intrusion detection and exploitation analysis.  This device allows connectivity to deployed decoy environments that
