@@ -28,6 +28,8 @@ HoneyPi device.
    - At least 8GB free space
    - Docker
 
+---
+
 2. Install Docker:
      ```bash
      # Install docker
@@ -42,13 +44,17 @@ HoneyPi device.
      # Start docker
      sudo systemctl start docker
 
+---
+
 3. Clone HoneyPi Repository:
     ```bash
     git clone https://github.com/zach-weav/HoneyPi.git
     cd HoneyPi
 
-5. Build and Deploy Docker Containers:
- - __Decoy SSH Server:__ Emulates an SSH sesion, providing realistic file structure and command execution.  The SSH Container allows any connection through port 2222 without needing a password.  Navigate to /decoy-ssh and run the following commands.
+---
+
+4. Build and Deploy Docker Containers:
+ - __Decoy SSH Server:__ Emulates an SSH sesion, providing realistic file structure and command execution.  The SSH Container allows any connection through port 2222 without needing a password.  Navigate to /src/decoy-ssh and run the following commands.
       ```bash
       # Build the container using the custom Dockerfile
       docker build -t decoy_ssh .
@@ -58,7 +64,7 @@ HoneyPi device.
     
   *Note: The ssh_honeypot will begin listening on port 2222 and should log all activity to ssh_honeypot.log.  After running the container you may stop it.  As seen later on, all containers will be run via startup script.
 
-   - __Decoy MySQL Container:__ This container utalizes a vulnerable MySQL Database with fake information.  Navigate to /sql-honeypot and run the following commands to mount all required files to the container.
+   - __Decoy MySQL Container:__ This container utalizes a vulnerable MySQL Database with fake information.  Navigate to /src/sql-honeypot and run the following commands to mount all required files to the container.
         ```bash
         # Build the container using Dockerfile
         docker build -t decoy_sql .
@@ -74,7 +80,7 @@ HoneyPi device.
         --restart unless-stopped \
         decoy_sql
 
- - __Loki:__ Loki recieves logs from promtail and sends them to the grafana dashboard.  Navigate to /honeypi-monitoring and execute the following to pull and run loki with the custom configuration.
+ - __Loki:__ Loki recieves logs from promtail and sends them to the grafana dashboard.  Navigate to /src/honeypi-monitoring and execute the following to pull and run loki with the custom configuration.
    ```bash
    # Run loki
    docker run -d \
@@ -84,7 +90,7 @@ HoneyPi device.
    grafana/loki:latest \
    -config.file=/etc/loki/config.yaml
 
-- __Promtail:__ Scrapes containers for logs and sends them to loki.  Navigate to /HoneyPi and execute the following to run promtail and send it log files for each container.
+- __Promtail:__ Scrapes containers for logs and sends them to loki.  Navigate to /src and execute the following to run promtail and send it log files for each container.
   ```bash
   docker run -d \
   --name promtail \
@@ -93,11 +99,11 @@ HoneyPi device.
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $(pwd)/decoy-ssh/ssh_honeypot.log:/decoy-ssh/ssh_honeypot.log \
   -v $(pwd)/sql-honeypot/mysql_honeypot_logs/general.log:/sql-logs/general.log \
-  -v $(pwd)/loki/promtail-config.yaml:/etc/promtail/promtail-config.yaml \
+  -v $(pwd)/honeypi-monitoring/loki/promtail-config.yaml:/etc/promtail/promtail-config.yaml \
   grafana/promtail:latest \
   -config.file=/etc/promtail/promtail-config.yaml
 
-- __Grafana:__ Hosts Grafana dashboard on port 3000.  Grafana will receive logs and metrics from datasources loki (logs) and prometheus (metrics).  Navigate to /honeypi-monitoring and execute the following.
+- __Grafana:__ Hosts Grafana dashboard on port 3000.  Grafana will receive logs and metrics from datasources loki (logs) and prometheus (metrics).  Navigate to /src/honeypi-monitoring and execute the following.
    ```bash
   docker run -d \
   --name grafana \
@@ -108,7 +114,7 @@ HoneyPi device.
   -e "GF_SECURITY_ADMIN_PASSWORD=admin" \
   grafana/grafana:latest
 
-- __Prometheus:__ Ingests metrics from cadvisor and sends them to grafana.  Navigate to /HoneyPi/honeypi-monitoring and execute the following>
+- __Prometheus:__ Ingests metrics from cadvisor and sends them to grafana.  Navigate to /src/honeypi-monitoring and execute the following>
   ```bash
   docker run -d \
   --name prometheus \
@@ -135,9 +141,21 @@ HoneyPi device.
   # View container logs for troubleshooting run issues
   docker logs <container_name> --tail 50
 
+- Configure Auto Startup Script
+    - Navigate to /src/startup.sh (This will be used to automatically start all containers upon system startup)
+    - Create cronjob to run script on reboot:
+      ```bash
+      # Access the current crontab
+      sudo crontab -e
 
-7. Configure Container Orchestration & Monitoring:
-  - Access grafana through http://<host_IP>:3000
+      # Add reboot command to the end of the file
+      @reboot /path_to_HoneyPi/src/startup.sh
+    - save and exit
+
+---
+
+5. Configure Container Orchestration & Monitoring:
+- Access grafana through http://<host_IP>:3000
     - Login using default credentials __admin / admin__ (you will be prompted to change your password upon login)
 - Add Datasources
     - Navigate to Connections -> Data Sources
