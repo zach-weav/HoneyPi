@@ -50,7 +50,7 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
 ## Build HoneyPi
 
 Want to build your own HoneyPi?
-[Click Here](docs/Build_HoneyPi.md) to view the build and deploy guide!
+[Click Here](docs/Build_HoneyPi.md) to view the Create and Deploy guide!
 
 ## __Ethical Notice__
 
