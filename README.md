@@ -36,7 +36,7 @@ presenting them in a visual format using a grafana dashboard.
 
 ### Container Health Monitoring
 
-In addition to log analysis, HoneyPi integrates additional containers Prometheus and cAdvisor to monitor the performance metrics and resource usage of each container.
+In addition to log analysis, HoneyPi integrates additional containers Prometheus and cAdvisor to scrape and monitor performance metrics of each docker container.
 These metrics include:
  - CPU and memory usage over time
  - Container uptime
