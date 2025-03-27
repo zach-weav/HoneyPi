@@ -22,7 +22,7 @@ its users with practical knowledge of how to detect and mitigate cyber threats.
 
 HoneyPi is a powerful honeypot monitoring solution that is designed to capture, visualize, and analyze attacker behavior in real-time using container-based decoy services.
 Once deployed, the HoneyPi acts as a lightweight, Network Intrustion Detection System (NIDS) by collecting detailed logs and performance metrics across containers and
-presenting them in a visual format using a grafana dashboard
+presenting them in a visual format using a grafana dashboard.
 
 ### Analyzing Attack Vectors Through Log Analysis
 
