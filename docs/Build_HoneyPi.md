@@ -126,7 +126,7 @@ HoneyPi device.
   docker logs <container_name> --tail 50
 
 - Configure Auto Startup Script
-    - Navigate to /src/startup.sh (This will be used to automatically start all containers upon system startup)
+    - Navigate to /src/startup.sh (This will be used to automatically start all containers upon system boot)
     - Create cronjob to run script on reboot:
       ```bash
       # Access the current crontab
