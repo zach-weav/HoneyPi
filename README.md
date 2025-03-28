@@ -56,6 +56,8 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
 Want to build your own HoneyPi?
 [Click Here](docs/Build_HoneyPi.md) to view the Create and Deploy guide!
 
+## Testing
+
 ## __Ethical Notice__
 
 This project is designed for educational and research purposes.  It should only be used as a tool intended to help individuals and organizations
@@ -65,5 +67,4 @@ networks where all participants are informed of its deployment and have provided
 Any data collected during the operation of HoneyPi should be handled responsibly and effectively to avoid
 any harm being done to individuals or organizations.
 
-## Testing
 
