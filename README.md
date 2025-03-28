@@ -18,13 +18,13 @@ purpose enables cybersecurity professionals to:
 By showcasing the importance of proactive security measures, HoneyPi contributes to raising awareness and equipping
 its users with practical knowledge of how to detect and mitigate cyber threats.
 
-## Usage
+# Usage
 
 HoneyPi is a powerful honeypot monitoring solution that is designed to capture, visualize, and analyze attacker behavior in real-time using container-based decoy services.
 Once deployed, the HoneyPi acts as a lightweight, Network Intrustion Detection System (NIDS) by collecting detailed logs and performance metrics across containers and
 presenting them in a visual format using a grafana dashboard.
 
-### Analyzing Attack Vectors Through Log Analysis
+## Analyzing Attack Vectors Through Log Analysis
 
  HoneyPi deploys decoy services like SSH and MySQL containers that mimic vulnerable systems and real-world scenarios.  These containers log every command, query, and connection
  attempt made by an attacker.  Promtail reads the generated logs and sends them to Loki where they are then sent and made queruable by a grafana dashboard.  Inspecting
@@ -34,7 +34,7 @@ presenting them in a visual format using a grafana dashboard.
   - Track attacker movement
   - Identify common tools or tactics attackers may use
 
-### Container Health Monitoring
+## Container Health Monitoring
 
 In addition to log analysis, HoneyPi integrates additional containers Prometheus and cAdvisor to scrape and monitor performance metrics of each docker container.
 These metrics include:
@@ -42,7 +42,7 @@ These metrics include:
  - Container uptime
  - Real-time metrics that may indicate spikes in container network activity
 
-### Grafana Dashboard
+## Grafana Dashboard
 
 The grafana dashboard allows HoneyPi to consolodate all logging and metric data into a single interface including features like:
  - Live log panels showing attacker interactions in real-time
@@ -51,12 +51,12 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
 
 ---
 
-## Build HoneyPi
+# Build HoneyPi
 
 Want to build your own HoneyPi?
 [Click Here](docs/Build_HoneyPi.md) to view the Create and Deploy guide!
 
-## Testing
+# Testing
 
 The HoneyPi test plan includes three main sections:
  - __Ad Hoc Tests__: Conducted during initial construction and configuration to identify issues while containers are being deployed.
@@ -71,7 +71,7 @@ The HoneyPi test plan includes three main sections:
 
 See the full [HoneyPi Test Plan](tests/TestPlan-HoneyPi.md) for detailed documentaion and testing methodology.
 
-## __Ethical Notice__
+# __Ethical Notice__
 
 HoneyPi is a cybersecurity education and research tool that is designed to observe threat actor behavior in a controlled environment.  It is __not__ intended for offensive security, exploitation, or use on unauthorized networks.
 
