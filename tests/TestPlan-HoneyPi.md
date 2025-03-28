@@ -26,7 +26,7 @@ test plan and survey to evaluate the device in real-world scenarios. This phase 
 offering diverse perspectives on the device's usability, functionality, and overall design.
 
 Several constraints may impact the testing procedures. The HoneyPi device relies on the availability of local network environments, 
-meaning some tests may be limited by variations in network configurations or restrictions imposed by firewalls and routing policies. 
+meaning some tests may be limited by variations in network configurations or restrictions imposed by firewalls. 
 Additionally, the Raspberry Pi hardware may introduce resource limitations, such as restricted processing power or memory, which could 
 affect the performance of the decoy services under high activity. Testers must also adhere to ethical and legal guidelines, ensuring that 
 the device is only tested on authorized networks and systems with explicit permission. Despite these constraints, the test plan aims to 
