@@ -73,11 +73,12 @@ See the full [HoneyPi Test Plan](tests/TestPlan-HoneyPi.md) for detailed documen
 
 ## __Ethical Notice__
 
-This project is designed for educational and research purposes.  It should only be used as a tool intended to help individuals and organizations
-improve their understanding of cybersecurity and enhance their defensive strategies.  Users should be mindful to ensure the HoneyPi is only used on authorized
-networks where all participants are informed of its deployment and have provided explicit consent.
+HoneyPi is a cybersecurity education and research tool that is designed to observe threat actor behavior in a controlled environment.  It is __not__ intended for offensive security, exploitation, or use on unauthorized networks.
 
-Any data collected during the operation of HoneyPi should be handled responsibly and effectively to avoid
-any harm being done to individuals or organizations.
+Users must only deploy a HoneyPi device on networks where they have full permission and where all required participants are informed of its presence and purpose.  It should never be used to
+entrap, deceive, or monitor users without their explicit informed consent.
+
+All data that is collected during HoneyPi's operation (logs and metrics) should be handled responsibly and in accordance with privacy laws and ethical standards.  This project is meant to strengthen
+cybersecurity posture, and raise awareness.  It is not to be used maliciously or carelessly.  Any misuse of a HoneyPi device outside of the guidelines is strictly discouraged.
 
 
