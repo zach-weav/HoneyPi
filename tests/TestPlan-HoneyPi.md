@@ -105,14 +105,13 @@ with no additional issues found, then the test will be considered a pass.
 
 ## HoneyPi Test Cases:
 
-All test cases that will be used in unit testing can be found in the provided excel document:
-<https://github.com/zachWeav/HoneyPi/blob/master/tests/HoneyPi_TestCases.xls>
+All test cases that will be used in unit testing can be found in the provided excel document [Here](HoneyPi_TestCases.xls):
 
 ## Test Deliverables:
 
 -   HoneyPi Test Plan
 
--   HoneyPi Test Cases (excel)
+-   HoneyPi Test Cases (xls)
 
 ## Test Environment:
 
@@ -149,7 +148,7 @@ Testing milestones:
 
 ## Responsibilities:
 
-Project Developer (myself):
+Project Developer __Zach Weaver__ (myself):
 
 -   As the project developer, I will be conducting all testing procedures
     to be completed by myself and fellow students.  Furthermore, I will be responsible for
@@ -175,7 +174,7 @@ Project Developer (myself):
 
 >   Device Testing Assumptions:
 
--  Excluding myself, I will have 5-8 testers
+-  Excluding myself, I will have 4-6 peer testers
 
 -  Each tester will provide valuable feedback
 
