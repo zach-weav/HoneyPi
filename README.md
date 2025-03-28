@@ -49,6 +49,9 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
  - Metric pannels for CPU, Memory, and Container health
  - Alerting mechanisms that send notifications immediately upon suspicious activity
 
+<img src="Images/dashboard.png">
+
+
 ---
 
 # Build HoneyPi
