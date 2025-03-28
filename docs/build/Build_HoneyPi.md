@@ -1,10 +1,10 @@
-## Create/Deploy
+# Create/Deploy
 
 Due to HoneyPi being a physical tool, there is no specific software installation for its use.
 Rather, users may follow the methodology provided to create and configure their own, personalized version of the
 HoneyPi device.
 
-### Prerequisites:
+## Prerequisites:
    - A Raspberry Pi or other host machine that will be used to run containerized services
    - A stable internet connection
    - ssh access to the host machine
@@ -14,7 +14,7 @@ HoneyPi device.
 
 ---
 
-### Install Docker:
+## Install Docker:
      ```bash
      # Install docker
      sudo apt install docker.io
@@ -30,14 +30,14 @@ HoneyPi device.
 
 ---
 
-### Clone HoneyPi Repository:
+## Clone HoneyPi Repository:
     ```bash
     git clone https://github.com/zach-weav/HoneyPi.git
     cd HoneyPi
 
 ---
 
-### Build and Deploy Docker Containers:
+## Build and Deploy Docker Containers:
  - __Decoy SSH Server:__ Emulates an SSH sesion, providing realistic file structure and command execution.  The SSH Container allows any connection through port 2222 without needing a password.  Navigate to /src/decoy-ssh and run the following commands.
       ```bash
       # Build the container using the custom Dockerfile
@@ -138,7 +138,7 @@ HoneyPi device.
 
 ---
 
-### Configure Container Orchestration & Monitoring:
+## Configure Container Orchestration & Monitoring:
 - Access grafana through http://<host_IP>:3000
     - Login using default credentials __admin / admin__ (you will be prompted to change your password upon login)
 - Add Datasources
