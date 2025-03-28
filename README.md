@@ -58,6 +58,19 @@ Want to build your own HoneyPi?
 
 ## Testing
 
+The HoneyPi test plan includes three main sections:
+ - __Ad Hoc Tests__: Conducted during initial construction and configuration to identify issues while containers are being deployed.
+ - __Unit Tests:__ Utalizes specific test cases covering core components of all the containers including connection, services, logging, and orchestration.
+   Specific test cases can be viewed [Here.](tests/HoneyPi_TestCases.xls)
+ - __Crowdsourced Tests:__ Peers helped test by simulating real-world attack scenarios.  This included scanning the device, connecting to the containers, and interacting with services.
+   All feedback was collected via Google Forms
+
+### Testing Goals:
+1. Verify attackers can successfully connect to the containerized services
+2. Ensure all logs and metrics are captured and visualized in Grafana
+
+See the full [HoneyPi Test Plan](tests/TestPlan-HoneyPi.md) for detailed documentaion and testing methodology.
+
 ## __Ethical Notice__
 
 This project is designed for educational and research purposes.  It should only be used as a tool intended to help individuals and organizations
