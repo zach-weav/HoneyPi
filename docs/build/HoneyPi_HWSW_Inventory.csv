@@ -1,0 +1,11 @@
+HW List,,,,,,SW List,,,,
+Component,Make/OEM,Model,Role,Responsible Party,,Software,Version,Description,Service Packs,Responsible Party
+HoneyPi Host Device,Raspberry Pi Foundation,Raspberry Pi 4 Model B,Primary system hosting all honeypot containers,System Developer (Owner),,Raspberry Pi OS,Bookworm (Debian 12),Lightweight OS running on the Raspberry Pi,Latest Stable,System Developer
+MicroSD Storage,SanDisk,128GB UHS-I SDXC,"Stores OS, containers, configuration files",System Developer,,Docker Engine,24.x.x (latest stable),Containerization engine for managing decoy containers,N/A,System Developer
+Power Supply,CanaKit,5.1V 3.0A USB-C,Power source for HoneyPi device,System Developer,,Grafana,10.x.x (latest stable),Web-based dashboard for visualization and alerts,N/A,System Developer
+USB Ethernet Adapter,UGREEN,USB 3.0 to Gigabit,Secondary network interface (optional use),System Developer,,Loki,2.9.x (latest stable),Log aggregation system integrated with Grafana,N/A,System Developer
+,,,,,,Promtail,2.9.x (latest stable),Log collector and forwarder for Loki,N/A,System Developer
+,,,,,,Prometheus,2.52.x (latest stable),Monitoring system and time-series database,N/A,System Developer
+,,,,,,cAdvisor,0.47.0,Container-level performance monitoring,N/A,System Developer
+,,,,,,Decoy SSH Honeypot,Custom Python,Custom SSH service written in Python using Paramiko,N/A,System Developer
+,,,,,,Decoy SQL Honeypot,MySQL 8.x (Docker),Decoy SQL database running in a containerized instance,Custom Config,System Developer
