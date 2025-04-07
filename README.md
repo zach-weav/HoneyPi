@@ -59,7 +59,7 @@ The grafana dashboard allows HoneyPi to consolodate all logging and metric data 
 Want to build your own HoneyPi?
 [Click Here](docs/build/Build_HoneyPi.md) to view the Create and Deploy guide!
 
-# Testing
+# Testing & Security
 
 The HoneyPi test plan includes three main sections:
  - __Ad Hoc Tests__: Conducted during initial construction and configuration to identify issues while containers are being deployed.
@@ -69,10 +69,11 @@ The HoneyPi test plan includes three main sections:
    All feedback was collected via Google Forms
 
 ### Testing Goals:
-1. Verify attackers can successfully connect to the containerized services
-2. Ensure all logs and metrics are captured and visualized in Grafana
+1. Verify attackers can successfully connect to the containerized services.
+2. Ensure all logs and metrics are captured and visualized in Grafana.
+3. Integrate modern cyber best practices into system configuration.
 
-See the full [HoneyPi Test Plan](tests/TestPlan-HoneyPi.md) for detailed documentaion and testing methodology.
+See the full [HoneyPi Test Plan](tests/TestPlan-HoneyPi.md) and [HoneyPi SSP](docs/HoneyPi_SSP.pdf) for detailed security and testing requirements!
 
 # __Ethical Notice__
 
