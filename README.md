@@ -27,7 +27,7 @@ presenting them in a visual format using a grafana dashboard.
 ## Analyzing Attack Vectors Through Log Analysis
 
  HoneyPi deploys decoy services like SSH and MySQL containers that mimic vulnerable systems and real-world scenarios.  These containers log every command, query, and connection
- attempt made by an attacker.  Promtail reads the generated logs and sends them to Loki where they are then sent and made queruable by a grafana dashboard.  Inspecting
+ attempt made by an attacker.  Promtail reads the generated logs and sends them to Loki where they are then sent and made searchable by a grafana dashboard.  Inspecting
  the logs in real-time through alerting mechanisms allows the user to:
   - Detect login attempts
   - Monitor malicious queries or enumeration behavior
