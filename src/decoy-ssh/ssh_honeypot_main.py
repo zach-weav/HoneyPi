@@ -1,6 +1,9 @@
 #This is the main file used to run the decoy ssh server
 #Uses Paraminko external library
-
+#Starter code Reference: Basic SSH Honeypot by Simon Bell
+#https://github.com/sjbell/basic_ssh_honeypot
+#------------------------------------------------------------
+#------------------------------------------------------------
 #!/usr/bin/env python
 import argparse
 import cmd
