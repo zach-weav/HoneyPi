@@ -47,6 +47,8 @@ HoneyPi device.
       docker run -d --name ssh_honeypot -v ${PWD}:/usr/src/app -p 2222:2222 decoy_ssh
     
   *Note: The ssh_honeypot will begin listening on port 2222 and should log all activity to ssh_honeypot.log.  After running the container you may stop it.  As seen later on, all containers will be run via startup script.
+  
+  __Reference:__ [How to build an SSH Honeypot in Python and Docker](https://github.com/sjbell/basic_ssh_honeypot) by Simon Bell.
 
    - __Decoy MySQL Container:__ This container utalizes a vulnerable MySQL Database with fake information.  Navigate to /src/sql-honeypot and run the following commands to mount all required files to the container.
         ```bash
